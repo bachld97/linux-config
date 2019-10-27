@@ -1,0 +1,67 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()
+
+filetype plugin indent on
+syntax on
+set encoding=utf8
+
+set number
+set relativenumber
+
+set incsearch
+set hlsearch
+set ignorecase
+
+nmap n nzz
+nmap N Nzz
+
+nnoremap j gj
+nnoremap k gk
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+set laststatus=2
+" set cursorline
+
+colorscheme default
+
+nnoremap <Space><Space> :nohlsearch<CR>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <C-o> :NERDTreeToggle<CR>
+nnoremap <C-h> <C-w><C-h> 
+nnoremap <C-j> <C-w><C-j> 
+nnoremap <C-k> <C-w><C-k> 
+nnoremap <C-l> <C-w><C-l> 
+
+let g:airline_theme='base16_chalk'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg='dark'
+set t_Co=256
+
+" au VimEnter * NERDTree
+
+nnoremap gn :bprev<CR>
+nnoremap gp :bnext<CR>
+
+set scrolloff=5
+
+set splitbelow
+set splitright
